@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        count=10;
+        var colors = ["red", "green", "blue", "pink", "yellow", "lightgreen", "cyan", "magenta"];
+        function generaterandom(min, max)
+        {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+       function changebgcolor() {
+        //    document.write(count);
+       
+           if(count==0){
+            document.getElementById("mypara").innerText=0;
+            document.body.style.backgroundColor = colors[generaterandom(0, colors.length - 1)];
+                setTimeout(function (){
+                 // Something you want delayed.
+                 window.close();
+                    
+              }, 1000);
+        
+           }
+           else{
+ 
+            document.getElementById("mypara").innerText=count;
+            count--;
+            document.body.style.backgroundColor = colors[generaterandom(0, colors.length - 1)];
+           }
+         
+        }
+        setInterval("changebgcolor()",1000);
+    </script>
+    <style>
+        p{
+            text-align: center;
+            font-weight: bold;
+            font-size: 3.4em;
+            margin-top: 5em;}
+    </style>
+</head>
+<body onload="changebgcolor()">
+    <p id="mypara"></p>
+    
+</body>
+</html>

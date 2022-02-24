@@ -1,0 +1,12 @@
+location.search.split("?")[1].split("&")[0].split("=")[1];
+
+first name
+
+--
+gender
+location.search.split("?")[1].split("&")[2].split("=")[1];
+
+
+--
+color
+location.search.split("?")[1].split("&")[3].split("=")[1];

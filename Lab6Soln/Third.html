@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Comptued propetery</title>
+    <script>
+        let projectID=prompt("Enter ProjectID key :");
+        let projectID_key=prompt("Enter ProjectID  :");
+        let projectName=prompt("Enter Project Name");
+        let projectName_code=prompt("Enter Project Name code");
+        let projectDuration=prompt("Enter project duration");
+        let projectDuration_code=prompt("Enter project duration code");
+        let Project = {
+            [projectID] : projectID_key,
+            [projectName_code] : projectName,
+            [projectDuration_code]:projectDuration,
+            Print: function () {
+                 console.log(`ProjectID  ${projectID} = ${this[projectID]} , ProjectName ${projectName_code} = ${this[projectName_code]}, ProjectDuration  ${projectDuration_code} = 
+                 ${this[projectDuration_code]}`); }
+        };
+        Project.Print();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

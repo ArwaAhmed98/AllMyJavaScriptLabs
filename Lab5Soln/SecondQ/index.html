@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 88888888888888888888888888888888888888888888 -->
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        span{
+            display:none;
+            color:red;
+        }
+        table{
+            width:300px;
+            padding:5px;
+            margin:10px auto;
+            text-align:center;
+            border:1px solid black;
+        }
+        .error{
+            display:block;
+            color:red;
+        }
+        .success{
+            display:none;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            usernametext = this.document.getElementById('usernametext');
+            usernamemessage = this.document.getElementById('usernamemessage');
+            useremailmsg = this.document.getElementById('useremailmsg');
+            userEmail = this.document.getElementById("email");
+            userCheckBoxes=document.querySelector('#hoppies');
+
+
+            usernametext.focus();  // onload focus will be in username text
+            // check username : on blur event with username text : 
+            usernametext.addEventListener('blur', function () {
+                if ((!isusernamevalid())) { // usrname msh valid?
+                    this.focus(); // mt5rgosh brah
+                    this.select();
+                    usernamemessage.className = "error";
+                } else {
+                    usernamemessage.className = "success";
+                }
+            });//end of username text validation
+            userEmail.addEventListener('blur', function () {
+                if (!isEmailValid()) { // usrname msh valid?
+                    this.focus(); // mt5rgosh brah
+                    this.select();
+                    useremailmsg.className = "error";
+                } else {
+                    useremailmsg.className = "success";
+                }
+            });//end of email text validation
+            userCheckBoxes.addEventListener('blur', function () {
+                if (!isCheckedBoxes()) { // usrname msh valid?
+                    this.focus(); // mt5rgosh brah
+                    this.select();
+                    userCheckBoxes.className = "error";
+                } else {
+                    userCheckBoxes.className = "success";
+                }
+            });//end of email text validation
+ 
+            
+
+
+            // submit event
+            this.document.forms[0].addEventListener('submit', function (e) {
+                if (!(isusernamevalid() && isEmailValid() && isCheckedBoxes())) {
+                    alert("Complete Your Data First");
+                    e.preventDefault();
+                }
+               
+            });//end of submit event
+
+
+            this.document.forms[0].addEventListener('reset', function (e) {
+                if (!confirm("Are You Sure ?")) {
+                    e.preventDefault();
+                } else {
+                    usernametext.focus();
+                }
+            });
+
+        });//end of load
+        function isusernamevalid() {
+            // return true or false : according pattern check 
+          // only letters are allowed
+            return usernametext.value.match(/^[A-Za-z]{4,6}$/);
+
+        }
+        function isEmailValid(){
+            return userEmail.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/);
+        }
+        function isCheckedBoxes(){
+            c=document.querySelector('#hoppies');
+            // var hopp=document.querySelector('#hoppies:checked').value;
+            if(c.checked==false){return false;}else{return true;}
+        }
+    
+    </script>
+</head>
+<style>
+    .container{
+        width: 90%;
+        /* border: 2px solid black; */
+        margin: 10px auto;
+        text-align: left;
+    }
+    form label , form input {
+        padding: 3px;
+        margin: 5px;
+    }
+</style>
+<body>
+    <div class="container">
+    <form method="get" action="cancelEvent.html">
+        <table>
+            <tr>
+                <td>  <label for="usr_name">UserName:</label></td>
+                <td>
+                    
+                    <input type="text" id="usernametext" />    
+                    <span id="usernamemessage">Incorrect Username</span>
+                </td>
+            </tr>
+            <tr>
+                <td>   <label for="country">Country</label></td>
+                <td>
+                    <select name="country" id="country">
+                        <option value="Egypt">Egypt</option>
+                        <option value="USA">USA</option>
+                        <option value="UAE">UAE</option>
+                        <option value="Qatar">Qatar</option>
+                      </select>
+                </td>
+            </tr>
+            <tr>
+                <td>    <label for="zip">Zip</label></td>
+                <td>
+                    <input type="number" id="zipcode" />
+                </td>
+            </tr>
+            <tr>
+                <td>  <label for="email">Email</label></td>
+                
+                <td>
+                    <input type="text" id="email" />
+                    <span id="useremailmsg">Incorrect Email</span>
+    
+                </td>
+            </tr>
+            <tr>
+                <td>  <label for="hoppy">Hoppies</label></td>
+                <td>
+                    <input type = "checkbox" value="reading" name = "hoppies"  id="hoppies"> Reading
+                    <input type = "checkbox" value="swimming" name = "hoppies"  id="hoppies"> swimming
+                    <span id="userCheckBoxes">Please Select at Least One</span>
+    
+                </td>
+              
+            </tr>
+           
+            <tr>
+                <td>    <input type="submit" value="Ok" /></td>
+                 <td>   <input type="reset" value="Cancel" /></td>
+          
+            </tr>
+        </table>
+    </form>
+    </div>
+
+</body>
+</html>

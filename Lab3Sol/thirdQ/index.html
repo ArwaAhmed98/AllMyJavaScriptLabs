@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        var i=0;
+        var colors = ["url(4.png)", "url(6.png)", "url(5.png)"];
+        function generaterandom(min, max)
+        {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+       function changebgcolor() {
+            document.getElementById("mypara").style.backgroundImage = colors[generaterandom(0, colors.length - 1)];
+            document.getElementById("mypara").style.backgroundRepeat='no-repeat';
+            document.getElementById("mypara").style.backgroundSize='cover';
+        }
+        function play(){
+            current_Interval=setInterval("changebgcolor()",1000);
+    
+        }
+        function stop(){
+            clearInterval(current_Interval);
+        }
+        function next(){
+            if(i==2)i=0;
+            document.getElementById("mypara").style.backgroundImage = colors[(i++)];
+            document.getElementById("mypara").style.backgroundRepeat='no-repeat';
+            document.getElementById("mypara").style.backgroundSize='cover';
+
+
+        }
+        function prev(){
+            if(i==0)i=2;
+            document.getElementById("mypara").style.backgroundImage = colors[(i--)];
+            document.getElementById("mypara").style.backgroundRepeat='no-repeat';
+            document.getElementById("mypara").style.backgroundSize='cover';
+        }
+    </script>
+    <style>
+        #mypara{
+        
+             margin: auto;
+             width: 20em;
+             height: 20em;
+           
+            margin-top: 5em;
+            border: 5px solid red;
+       
+        }
+        button{
+        
+            padding: 1em 2em;
+            text-align: center;
+           
+        }
+        #btn_play,#btn_stop{
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border-radius: 2em;
+            cursor: pointer;
+            margin-left: 1em;
+        }
+        #buttons{
+            position: absolute;
+            bottom:9em;
+            left: 35em;
+        }
+
+    </style>
+</head>
+<body onload="changebgcolor()">
+    <div id="mypara"></div>
+    <div id="buttons">
+        <button onclick="next()" id="btn_stop">next</button>
+        <button onclick="play()" id="btn_play">play</button>
+        <button onclick="stop()" id="btn_stop">stop</button>
+        <button onclick="prev()" id="btn_stop">prev</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+  
+    var arr = prompt("Enter your numbers sep by commas").split(","); // convert string eli rg3 men prompt L array
+    var no_of_elemnts=arr.length;
+    document.write("<table border='1'  " + ">" );
+    document.write("<thead><tr><th border='1' >Values</th></tr></thead>");
+
+    for( var i=0;i<no_of_elemnts;i++){
+          if(i%2==0){
+            document.write("<tr><td style ='background-color:aqua;'>" +  arr[i] + "</td></tr>" );
+             }
+            else{
+            document.write("<tr><td style ='background-color:red;'>" +  arr[i] + "</td></tr>" );
+
+            }
+        }
+document.write(" </table>");
+
+// var duplicated=[];
+// var duplicated_indexes=[];
+//     for(var i=0;i<no_of_elemnts;i++){
+//         for(var j=i+1;j<no_of_elemnts;j++){
+//             if(arr[j]===arr[i] && (!(duplicated_indexes.includes(j)))){
+
+//                 duplicated.push(arr[j]); //hshof el comments
+//                 duplicated_indexes.push(j);
+//                 document.write("index"+j+"value"+arr[j]);  
+                
+//             }
+//         }
+//     }
+for(var i=0;i<no_of_elemnts;i++){
+    var j=i+1;
+    var z= arr.indexOf(arr[i],j);
+    // console.log(z);
+    if(arr.indexOf(arr[i],j)){
+        document.write("repeated in row",j);
+        document.write("<br>")
+    }
+    else{
+        // document.write("no repeating");
+    }
+}
+
+// for(var i=0;i<duplicated.length;i++){
+//     document.write("dup values "+duplicated[i]+"<br>");
+//     document.write("dup indexes "+duplicated_indexes[i]+"<br>");
+// }
+
+// duplicated.forEach(function(value){document.write("the repeated values"+value+"<br>")});
+// duplicated_indexes.forEach(function(value){document.write("the repeated indexes"+value+"<br>")});
+
+</script>
+<body>
+    
+</body>
+</html>
+

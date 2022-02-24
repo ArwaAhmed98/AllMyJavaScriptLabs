@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+  
+</head>
+<body>
+    <p >Welcome <span id="FormInfo"></span>  </p>
+    <script>
+// var userinput = document.querySelector("input[type='text']").value;
+        var name=document.cookie.split(";")[0].split("=")[1];
+        document.getElementById("FormInfo").innerHTML=name;
+        
+        var gender=document.cookie.split(";")[1].split("=")[1];
+        document.write("Your Gender is "+gender);
+
+        var color=document.cookie.split(";")[2].split("=")[1];
+        if(color=='red'){
+            document.getElementById("FormInfo").style.color = 'red';
+            document.getElementById("FormInfo").style.fontWeight = 'bold';
+        }
+        else if(color=='green')
+        {
+            document.getElementById("FormInfo").style.color = 'green';
+            document.getElementById("FormInfo").style.fontWeight = 'bold';
+
+        }else{
+            document.getElementById("FormInfo").style.color = 'blue';
+            document.getElementById("FormInfo").style.fontWeight = 'bold';
+        }
+   
+        
+        // var password = document.querySelectorAll("input[type='text']")[1].value;
+    //    document.cookie = 
+
+
+
+  </script>
+</body>
+</html>
+

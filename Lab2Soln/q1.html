@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+  
+    var arr = prompt("Enter your numbers sep by commas"); // convert string eli rg3 men prompt L array
+
+    if (arr.indexOf(',') != -1) {
+    var segments = arr.split(',');
+    }
+    x=segments.filter(function(val){ return  ((val.trim != '') && (Number(val))); }); // check if it is a number or not
+    document.write("your sum is"+eval(x.join("+")));
+
+</script>
+<body>
+    
+</body>
+</html>
+<!-- engnasr@yahoo.com -->

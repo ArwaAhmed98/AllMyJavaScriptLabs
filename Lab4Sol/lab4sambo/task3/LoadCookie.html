@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var result = document.cookie
+        var userName = result.split(';')[0].split('=')[1]
+        var color = result.split(';')[1].split('=')[1]
+        var gender = result.split(';')[2].split('=')[1]
+
+        document.write("<img src='" + gender + ".png' width='200px' height='200px'>")
+        document.write("Welcome : <h3 style='display:inline ; color:" + color + " ;'>" + userName + "</h3>")
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

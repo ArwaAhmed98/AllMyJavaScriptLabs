@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // var letters = /^[A-Za-z]+$/; // all letters
+    while(true){
+    var n=prompt("Please enter your name");
+    if( !(n.trim().length)  ){ // trim means remove any space at the start and end of ur string 
+        // if the str.length == 0 , means that you have not entered nothing  
+         alert("Your input is empty,Try again");
+        
+    }
+    else{
+        document.write("Your name is "+n);
+        break;
+    }
+}
+    /////////////////////////
+    while(true){
+    var mobile_no=prompt("Please enter your mob number") ; // imlicit casting to int  str *1 
+
+    if(mobile_no.constructor.name == 'Number'){
+        document.write("Your Mobile Number is"+mobile_no);
+        break;
+        }
+    else{alert("Must contain only numbers");break;}   
+
+    if (mobile_no.length != 12){alert("You must enter 11 numbers , is this format '010-91114500' ");}
+    if ((mobile_no.slice(0,3) !== '010') && (mobile_no.slice(0,3) !== '011') &&
+    (mobile_no.slice(0,3) !== '012')  &&
+     (mobile_no.slice(0,3) !== '015') ){alert("Your number must start with 010,011,012");}
+    
+    if (mobile_no.charAt(4) != '-'){alert("you must seperate with dash after the 3 numbers");}
+  
+    
+}
+
+</script>
+<body>
+    
+</body>
+</html>

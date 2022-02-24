@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        let myarr = [1,2,3,4,5];
+        let TextOp = (op) =>{
+            switch(op){
+                case '+':
+                return 'sum';
+                break;
+                case '-':
+                return 'sub';
+                break;
+                case '/':
+                return 'divison';
+                break;
+                case '*':
+                return 'mul';
+                break;
+                default:
+                return 'invalid operation';
+                break;
+            }
+        };
+        function getResult(op,...myarr) { // put first parameter as operation and the rest of param push it in the array
+           return (`The Result of ${TextOp(op)}  for  ${(myarr.join(","))}  is  ${eval(myarr.join(op))}`);
+        }
+        //console.log(getResult("+", 1, 2, 3, 4));
+        // let numbersarr = [1, 2, 3, 4, 5];
+        /*console.log(getResult("+", numbersarr));// you have to spread this array  : otherwise you will have the last value from array object */
+        console.log(getResult("+", ...myarr));// ... means spread
+        console.log(getResult("/", ...myarr));// ... means spread
+        console.log(getResult("*", ...myarr));// ... means spread
+        console.log(getResult("-", ...myarr));// ... means spread
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

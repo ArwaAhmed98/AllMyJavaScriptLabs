@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+    var ST=[
+        [10,2,6],
+        [3,4,5],
+        [6,7,8]
+    ];
+    var i=0,j=0;
+    document.write("<table border='1'  " + ">" );
+    document.write(`<tr>
+        <td> <b>ST1</b> </td>
+        <td> <b>ST2</b> </td>
+        <td> <b>ST3</b> </td>
+        <td> <b>Sum</b> </td>
+        </tr>` );
+for( i=0;i<3;i++){
+    document.write(`<tr>`);
+    sum=0;
+    for( j=0;j<3;j++){
+    
+        document.write(`<td>` );
+        document.write(ST[i][j]);
+        // console.log(ST[i][j]);
+        document.write(` </td>`);
+        sum+=ST[i][j];
+        
+        
+        }
+        document.write(`<td>` );
+        document.write(sum);
+        document.write(` </td>`);
+        document.write(`</tr>` );
+}
+    document.write(" </table>");
+
+</script>
+<body>
+    
+</body>
+</html>
+
+
+

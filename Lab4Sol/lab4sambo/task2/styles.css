@@ -1,0 +1,11 @@
+th,
+table {
+  border: 1px solid black;
+}
+h1 {
+  text-align: center;
+  color: darkred;
+}
+input[type='button'] {
+  background-color: lightblue;
+}

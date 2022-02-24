@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function getallposts() {
+        let allposts = await fetch("https://jsonplaceholder.typicode.com/posts");
+        let allpostsasjs = await allposts.json();
+        let tbl = document.createElement('table');
+        let cap=document.createElement('caption');
+        cap.innerHTML=`<h1>This is a data fetched from Api</h1>`;
+        tbl.style.border="2px solid black";   
+        tbl.style.margin="auto";
+        let row1 = document.createElement('tr');
+        let th1 = document.createElement('th');
+        th1 .style.border="2px solid black";   
+        let th2 = document.createElement('th');
+        th2 .style.border="2px solid black";   
+        let th3 = document.createElement('th');
+        th3 .style.border="2px solid black";   
+        th1.innerText="USERid";
+        th2.innerText="id";
+        th3.innerText="title";
+        row1.appendChild(th1);
+        row1.appendChild(th2);
+        row1.appendChild(th3);
+        tbl.appendChild(cap);
+        tbl.appendChild(row1);
+        allpostsasjs.forEach((post) => { 
+            let row = document.createElement('tr');
+            let col1=document.createElement('td');
+            col1 .style.border="2px solid black";   
+            let col2=document.createElement('td');
+            col2 .style.border="2px solid black";   
+            let col3=document.createElement('td');
+            col3 .style.border="2px solid black";   
+            col1.innerText=`${post.userId}`;
+            col2.innerText=`${post.id}`;
+            col3.innerText=`${post.title}`;
+            row.appendChild(col1);
+            row.appendChild(col2);
+            row.appendChild(col3);
+            tbl.appendChild(row);
+            
+        })  
+    document.body.appendChild(tbl);
+    }
+    getallposts();
+</script>
+</body>
+</html>
