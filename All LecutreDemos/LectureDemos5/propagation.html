@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- 55555555555555555555555555555555555555555 -->
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            border:2px solid black;
+            margin:10px auto;
+        }
+        #parentdiv{
+            width:300px;
+            height:300px;
+            background-color:lightcoral;
+        }
+        #childdiv{
+            width:200px;
+            height:200px;
+            background-color:Highlight;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+
+            this.document.getElementById('parentdiv').addEventListener('click', function (e) { alert("parent div is clicked"); });//end of click with parent
+            this.document.getElementById('childdiv').addEventListener('click', function (e) { alert("Child div is clicked"); e.cancelBubble = true; });//end of click with Child
+        });//end of load
+    </script>
+</head>
+<body>
+    <div id="parentdiv">
+        <div id="childdiv"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title> 
+  
+    <style>
+        .container{
+            margin-top: 2em;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <!-- onaction option in forms transfers the Data in url by default -->
+    <form name="registration">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+
+        <input type="radio" id="male" name="Gender" value="Male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="Gender" value="Female">
+        <label for="female">Female</label><br>
+        <br>
+        <label for="color">Your Fav color:</label>
+        <select name="colors" id="colors" >
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form> 
+      <label id="mylbl"></label>
+    </div>
+    <script>
+      
+        document.querySelector("input[type='submit']").onclick = function(){
+             var userinput = document.querySelector("input[name='fname']").value;
+             var usr_gender = document.querySelector("input[name='Gender']").value;
+            // var e = document.getElementById("colors");
+            // var strUser = e.value;
+           var  choice = document.getElementById("colors").value;
+            //or//
+            // e = document.getElementById("colors");
+            // strUser = e.options[e.selectedIndex].text;
+            // console.log(userinput);
+            // console.log(usr_gender);
+            // console.log(strUser);
+            var expiredate = new Date();
+            expiredate.setFullYear(expiredate.getFullYear() + 1);
+            expireDate_cookie = "expires = " + expiredate;
+            document.cookie = "Username=" + userinput 
+            document.cookie = "Gender=" + usr_gender  
+            document.cookie = "SelectedColor=" + choice  
+            window.open("child.html");
+            // to remove cookie file : give prevouse date object for cookie key
+            //  var pastdate = new Date(2010, 01, 15);
+            // document.cookie = "un=" + userinput + ";expires = " + pastdate;
+            // document.cookie = "un=" + usr_gender + ";expires = " + pastdate;
+            // document.cookie = "un=" + choice + ";expires = " + pastdate;
+          
+        }
+
+
+    </script>
+</body>
+</html>

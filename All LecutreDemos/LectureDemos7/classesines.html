@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+       /* let pone = new Person(10, "ahmed");*/// Error
+        class Person {
+            // private fields declaration;
+            #id = 1;
+            #name = "No Name";
+            // 1- create constructor 
+
+            constructor(_id, _name) {
+                // declare fields as public => this :  
+                //this.ID = _id;
+                //this.Name = _name;
+
+
+                // seetting for private fields
+                this.#id = _id;
+                this.#name = _name;
+            }
+            //// setters and getters 
+            //setID(_id) {
+            //    // write code logic before assign 
+            //    if (_id >= 1 && _id <= 100)
+            //        this.#id = _id;
+            //}
+            //setName(_name) {
+            //    if (_name.trim().length >= 3)
+            //        this.#name = _name;
+            //}
+            //getID() {
+            //    return this.#id;
+            //}
+            //getName() {
+            //    return this.#name;
+            //}
+
+            // properties:
+            set ID(_id) {
+                if (_id >= 1 && _id <= 100)
+                    this.#id = _id;
+            }
+            set Name(_name) {
+                if (_name.trim().length >= 3)
+                    this.#name = _name;
+            }
+            get ID() {
+                return this.#id;
+            }
+            get Name() {
+                return this.#name;
+            }
+
+
+            // print : instance methods : accissible using an object from type person :
+            // created with every instance of person class
+
+            Print() {
+                return `ID = ${this.#id} , Name = ${this.#name}`;
+            }
+            // instance methos : access it using an object from clas
+
+            //getIdentity() {
+            //    return "From Type Person";
+            //}
+
+
+            // class level methods : accessible using class name not an object from class : static method
+            static getIdentity() {
+                return "From Type Person";
+            }
+
+        }//end of class declaration
+
+        // classes not hoisetd 
+        let pone = new Person(10, "ahmed");
+        let ptwo = new Person(20, "Ali");
+        // person : id , name
+        // pone.ID=-10;// set
+        //pone.ID;//get
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

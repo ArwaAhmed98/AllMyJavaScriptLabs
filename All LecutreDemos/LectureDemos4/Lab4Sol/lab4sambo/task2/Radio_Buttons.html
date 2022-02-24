@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <Style>
+        table,
+        tr,
+        td {
+            padding: 15px;
+            text-align: left;
+            border: 2px solid green;
+        }
+        /*.txt {
+            padding: 10px;
+            font-family: Arial;
+            font-family: Times;
+            font-family: Tahoma;
+            text-align: left;
+            text-align: right;
+            text-align: center;
+            line-height: 5px;
+            line-height: 10px;
+            line-height: 15px;
+            border-style: dotted;
+            border-style: dashed;
+            border-style: solid;
+            border-width: 2px;
+            border-width: 5px;
+            border-width: 7px;
+            border-color: red;
+            border-color: black;
+            border-color: green;
+        }*/
+    </Style>
+
+</head>
+
+
+<body>
+
+    <table>
+
+        <p id="txt">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <br> when an unknown printer took a galley of type and scrambled it to make a type
+            <br> specimen book. It has survived not only five centuries, but also the leap into <br> electronic typesetting, remaining essentially unchanged. It was popularised in <br> the 1960s with the release of Letraset sheets containing Lorem Ipsum
+            passages, <br> and more recently with desktop publishing software like Aldus PageMaker including <br> versions of Lorem Ipsum.
+        </p>
+
+        <tbody>
+
+            <tr>
+                <td>
+                    <p>Font Family</p>
+
+                    <label><input type="radio" name="radio1" value="Arial" onclick="fontFamily('Arial')" checked>Arial</label><br>
+                    <label><input type="radio" name="radio1" value="Times" onclick="fontFamily('Times')">Times</label><br>
+                    <label><input type="radio" name="radio1" value="Tahoma" onclick="fontFamily('Tahoma')">Tahoma</label>
+
+
+                </td>
+
+                <td>
+                    <p>Txt Align</p>
+
+                    <label><input type="radio" name="radio2" value="left" onclick=" textAlign('left') " checked>left</label><br>
+                    <label><input type="radio" name="radio2" value="center" onclick=" textAlign('center')">center</label><br>
+                    <label><input type="radio" name="radio2" value="right" onclick=" textAlign('right')">right</label>
+
+
+                </td>
+
+                <td>
+                    <p>Line Hieght</p>
+
+                    <label><input type="radio" name="radio3" value="10px" onclick="lineHeight('10px')" checked>10px</label><br>
+                    <label><input type="radio" name="radio3" value="15px" onclick="lineHeight('15px')">15px</label><br>
+                    <label><input type="radio" name="radio3" value="20px" onclick="lineHeight('20px')">20px</label>
+
+
+                </td>
+
+                <td>
+                    <p>Border Size </p>
+
+                    <label><input type="radio" name="radio4" value="2px" onclick="borderWidth('2px')" checked>2px</label><br>
+                    <label><input type="radio" name="radio4" value="5px" onclick="borderWidth('5px')">5px</label><br>
+                    <label><input type="radio" name="radio4" value="7px" onclick="borderWidth('7px')">7px</label>
+
+
+                </td>
+
+                <td>
+                    <p>Border Type </p>
+
+                    <label><input type="radio" name="radio5" value="solid" onclick="borderStyle('solid')" checked>solid</label><br>
+                    <label><input type="radio" name="radio5" value="dashed" onclick="borderStyle('dashed')">dashed</label><br>
+                    <label><input type="radio" name="radio5" value="dotted" onclick="borderStyle('dotted')">dotted</label>
+
+
+                </td>
+
+                <td>
+                    <p>Border color </p>
+
+                    <label><input type="radio" name="radio6" value="red" onclick="borderColor('red')" checked>red</label><br>
+                    <label><input type="radio" name="radio6" value="black" onclick="borderColor('black')">black</label><br>
+                    <label><input type="radio" name="radio6" value="green" onclick="borderColor('green')">green</label>
+
+
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+    <script>
+        var txt = document.getElementById("txt")
+
+        function fontFamily(f) {
+            txt.style.fontFamily = f;
+        }
+
+        function textAlign(a) {
+            txt.style.textAlign = a;
+        }
+
+        function lineHeight(h) {
+            txt.style.lineHeight = h;
+        }
+
+        function borderWidth(w) {
+            txt.style.borderWidth = w;
+        }
+
+        function borderStyle(s) {
+            txt.style.borderStyle = s;
+        }
+
+        function borderColor(c) {
+            txt.style.borderColor = c;
+        }
+    </script>
+</body>
+
+</html>

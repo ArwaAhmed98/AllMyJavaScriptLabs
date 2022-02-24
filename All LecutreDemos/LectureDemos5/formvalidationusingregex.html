@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- 88888888888888888888888888888888888888888888 -->
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        span{
+            display:none;
+            color:red;
+        }
+        table{
+            width:300px;
+            padding:5px;
+            margin:10px auto;
+            text-align:center;
+            border:1px solid black;
+        }
+        .error{
+            display:block;
+            color:red;
+        }
+        .success{
+            display:none;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            usernametext = this.document.getElementById('usernametext');
+            usernamemessage = this.document.getElementById('usernamemessage');
+
+            userpasstext = this.document.getElementById('userpasstext');
+            userpassmessage = this.document.getElementById('userpassmessage');
+
+            usernametext.focus();
+            // check username : on blur event with username text : 
+            usernametext.addEventListener('blur', function () {
+                if (!isusernamevalid()) { // usrname msh valid?
+                    this.focus(); // mt5rgosh brah
+                    this.select();
+                    usernamemessage.className = "error";
+                } else {
+                    usernamemessage.className = "success";
+                }
+            });//end of username text validation
+            userpasstext.addEventListener('blur', function () {
+                if (!isuserpassvalid()) {
+                    this.focus(); // mt5rgosh brah
+                    this.select(); // 7ddli el kalam bta3ak
+                    userpassmessage.className = "error";
+                } else {
+                    userpassmessage.className = "success";
+                }
+            });//end of userpass validation
+
+
+
+
+            // submit event
+            this.document.forms[0].addEventListener('submit', function (e) {
+                if (!(isusernamevalid() && isuserpassvalid())) {
+                    alert("Complete Your Data First");
+                    e.preventDefault();
+                }
+            });//end of submit event
+
+
+            this.document.forms[0].addEventListener('reset', function (e) {
+                if (!confirm("Are You Sure ?")) {
+                    e.preventDefault();
+                } else {
+                    usernametext.focus();
+                }
+            });
+
+        });//end of load
+        function isusernamevalid() {
+            // return true or false : according pattern check 
+            return usernametext.value.match(/^[A-Za-z]{4,6}$/);
+        }
+        function isuserpassvalid() {
+            // return true or false : according pattern check 
+            return userpasstext.value.match(/^\d{6,8}$/);
+        }
+    </script>
+</head>
+<body>
+    <form method="get" action="cancelEvent.html">
+        <table>
+            <tr>
+                <td rowspan="2">UserName</td>
+                <td><input type="text" id="usernametext" /></td>
+
+            </tr>
+            <tr>
+                <td><span id="usernamemessage">Incorrect Username</span></td>
+            </tr>
+            <tr>
+                <td rowspan="2">UserPass</td>
+                <td><input type="password" id="userpasstext" /></td>
+
+            </tr>
+            <tr>
+                <td><span id="userpassmessage">Incorrect Username</span></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Ok" /></td>
+                <td><input type="reset" value="Cancel" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

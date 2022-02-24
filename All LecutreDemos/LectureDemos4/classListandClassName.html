@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .styleone{
+            background-color:yellow;
+            color:red;
+            border:2px solid black;
+            width:300px;
+            padding:10px;
+            font:bold 25px verdana;
+        }
+        .styletwo{
+            text-decoration:underline;
+            text-transform:uppercase;
+        }
+    </style>
+    <script>
+        function applystyleone() {
+            //selevt p :
+            //var selectedp = document.querySelector("p");
+            //selectedp.style.backgroundColor = "yellow";
+            //selectedp.style.border = "2px solid black";
+            //selectedp.style.padding = "10px";
+            //selectedp.style.width = "300px";
+            //selectedp.style.font = "bold 20px verdana";
+
+            // className
+            var selectedp = document.querySelector("p");
+            /*selectedp.className += "styleone";*/
+            selectedp.classList.add("styleone");
+        }
+        function removestyleone() {
+            //var selectedp = document.querySelector("p");
+            //selectedp.style.backgroundColor = "none";
+            //selectedp.style.border = "none";
+            //selectedp.style.padding = "0";
+            //selectedp.style.width = "auto";
+            //selectedp.style.font = "none";
+            //document.querySelector("p").className = "";
+            document.querySelector("p").classList.remove("styleone");
+            
+        }
+        function applystyletwo() {
+            /*document.querySelector("p").className += " styletwo";*/
+            document.querySelector("p").classList.add("styletwo");
+        }
+        function togglestyleone() {
+            document.querySelector("p").classList.toggle("styleone");
+        }
+    </script>
+</head>
+<body>
+    <p>ITI Nasr City Branch</p>
+    <!--<input type="button" value="ApplyStyleOne" onclick="applystyleone();" /><br />
+    <input type="button" value="ApplyStyleTwo" onclick="applystyletwo();" /><br />
+    <input type="button" value="RemoveStyle" onclick="removestyleone();" />-->
+    <input type="button" value="ToggleStyle" onclick="togglestyleone();" />
+</body>
+</html>

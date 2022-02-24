@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var i = 1;
+        function AddNewChild() {
+            //1- selevt div
+            var parentdiv = document.getElementsByTagName("div")[0];//["div"]
+            //2- created p : using document.createElement 
+            var createdp = document.createElement("p");// => <p></p>
+            //var createdid = document.createAttribute("id");
+            //createdid.value = i;
+            //i++;
+            createdp.setAttribute("id", i++);
+
+            //3- selet inut type text : to get value from it 
+            var userinout = document.querySelector("input[type='text']").value;
+            createdp.innerText = userinout;
+            //<p>ITI</p>
+            console.log(createdp);
+            //4- insert vaue inside created p  then 
+            //5- display p inside div
+            // appendChild
+            //parentdiv.appendChild(createdp);
+
+
+
+            // insertAdjacent
+            parentdiv.insertAdjacentElement("afterend", createdp);
+
+
+
+              }
+    </script>
+    <style>
+        div{
+            background-color:lightpink;
+            width:500px;
+            height:500px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" /><br />
+    <input type="button" value="Add" onclick="AddNewChild();"/>
+    <div>
+
+    </div>
+</body>
+</html>

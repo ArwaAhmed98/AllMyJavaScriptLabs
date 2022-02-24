@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            border: 5px solid black;
+            margin: auto;
+            width: 30%;
+            position: absolute;
+            top: 20%;
+            left: 33%;
+            height: 30%;
+
+        }
+        .parent input[type="text"]{
+            width: 85%;
+            margin-top: 3px;
+            margin-left: 3px;
+        }
+        .parent table{
+            margin: auto;
+            width: 100%;
+        }
+        #CountRows{
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 3px;
+            margin-left: 3px;
+                }
+        
+    </style>
+</head>
+<body>
+   <div class="parent">
+            <input type="text"  value="News Number 1">
+            <input  id="Add" type="button" value="Add">
+            <table border="1px">
+                <tr>
+                    <th>No.</th>
+                    <th>News</th>
+                  </tr>
+            </table>
+            <input id="CountRows" type="button" value="CountRows">
+        </div>
+    <script>
+        var i=1; 
+        document.getElementById("Add").onclick = function(){ // the function implicity takes object frm event
+            var mytable=document.getElementsByTagName("table")[0];
+            var createdRow=document.createElement("tr");
+            // var createdRow =document.getElementsByTagName("tr")[1];
+            var createdColNumbers=document.createElement("td");//<td></td>
+            var createdColNews=document.createElement("td");//<td></td>
+            // var created_id=document.createAttribute("id");
+            // created_id.value=i;
+            // // i++;
+            // createdColNumbers.innerText=i++;
+            var usr_input=document.querySelector("input[type='text").value;
+            createdColNews.innerText=usr_input;
+            createdColNumbers.innerText=(i++);
+            createdRow.appendChild(createdColNumbers);
+            createdRow.appendChild(createdColNews);
+            mytable.appendChild(createdRow);
+        }
+        document.getElementById("CountRows").onclick = function(){ // the function implicity takes object frm event
+            alert("You have "+(i-1)+" Rows");
+        }
+
+    </script>
+</body>
+</html>

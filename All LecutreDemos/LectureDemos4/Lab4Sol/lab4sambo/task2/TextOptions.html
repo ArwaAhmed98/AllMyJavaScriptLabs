@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <p id="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+	<table>
+		<thead>
+			<tr >
+				<th>Text Transform</th>
+				<th>Text Decoration</th>
+				<th>Text Border</th>
+			</tr>
+		</thead>
+		<tr>
+			<td>
+				<input name="transform" value="none" type="radio" /> none
+				<br>
+				<input name="transform" value="capitalize" type="radio" /> Capitalize
+				<br>
+				<input name="transform" value="uppercase" type="radio" /> UpperCase
+				<br>
+        <input name="transform" value="lowercase" type="radio" /> LowerCase
+        <br> 
+      </td>
+			<td>
+				<input name="decoration" value="none" type="radio" /> none
+				<br>
+        <input name="decoration" value="overline" type="radio" /> overline
+				<br>
+				<input name="decoration" value="line-through" type="radio" /> line-through
+				<br>
+				<input name="decoration" value="underline" type="radio" /> underline
+				<br> 
+      </td>
+			<td>
+				<input name="border" value="none" type="radio" /> none
+				<br>
+        <input name="border" value="dotted" type="radio" /> dotted
+				<br>
+        <input name="border" value="ridge" type="radio" /> ridge
+				<br>
+				<input name="border" value="solid" type="radio" /> solid
+				<br>
+				<input name="border" value="dashed" type="radio" /> dashed
+				<br> 
+      </td>
+      <td>
+
+      </td>
+		</tr>
+	</table>
+	<script>
+      var p = document.getElementsByTagName('p')[0]
+      document.getElementsByName("transform").forEach(function(element) {
+        element.onclick = function() {
+            p.style.textTransform = element.value
+        }
+      })
+      document.getElementsByName("decoration").forEach(function(element) {
+        element.onclick = function(e) {
+            p.style.textDecoration = element.value     
+        }
+      })
+      document.getElementsByName("border").forEach(function(element) {
+        element.onclick = function() {
+            p.style.borderStyle = element.value
+          
+        }
+      })
+	</script> 
+  </body>
+</html>

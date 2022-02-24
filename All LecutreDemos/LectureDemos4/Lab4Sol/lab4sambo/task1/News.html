@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    
+    <table >
+      <input type="text">
+      <input name="adder" type="button" value="Add" onclick="addRow()">
+      <br>
+      <thead><tr><th>No.</th><th style="text-align: left;">News</th></tr></thead>
+    </table>
+    <input name="counter" type="button" value="Count Rows" onclick="countRows()"> 
+
+    <script>
+      var rowNumber = 1
+      var table = document.getElementsByTagName("table")[0]
+      function addRow(){
+        var userinput =  document.querySelector("input[type='text']").value
+        var row = document.createElement("tr")
+        var rowNum = document.createElement("td")
+        var rowData = document.createElement("td")
+        rowNum.innerText = rowNumber
+        rowData.innerText =  userinput
+        row.appendChild(rowNum)
+        row.appendChild(rowData)
+        table.appendChild(row)
+        rowNumber+=1
+      }
+      function countRows(){
+        alert(rowNumber-1)
+      }      
+    </script>
+  </body>
+</html>

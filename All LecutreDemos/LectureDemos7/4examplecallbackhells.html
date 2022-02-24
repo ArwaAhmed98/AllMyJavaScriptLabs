@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        // nasr
+        function getAllStudents(callback = (stdarr, callback = (deptarr, callback = (mgrarr)=> {
+            console.log("From Display ALl Managers");
+            mgrarr.forEach((mgr) => { console.log(mgr); });
+        })=> {
+            setTimeout(function () {
+                console.log("From Display All Depts");
+                let mgrarr = [];
+                deptarr.forEach((dept) => { console.log(`Dept ID = ${dept.deptID} , DeptName = ${dept.deptName}`); mgrarr.push(dept.deptMgr); })
+                // return mgrarr;
+                //displayAllManagers(mgrarr);
+                callback(mgrarr);
+            }, 2000);
+        })=> {
+            setTimeout(function () {
+                console.log("From Display All Studnets");
+                stdarr.forEach((std) => { console.log(`ID = ${std.ID} , Name = ${std.Name}`); });
+                let deptarr = [{ deptID: 100, deptName: "Cloud", deptMgr: "Mgrone" }, { deptID: 200, deptName: "Java", deptMgr: "Mgrtwo" }, { deptID: 300, deptName: "Application", deptMgr: "MgrThree" }];
+                //return deptarr;// after 4 seconds
+                //displayAllDepts(deptarr);
+                callback(deptarr);
+            }, 2000);
+        }) {
+            // not return direct students array : take in memeroy 4 second to return data
+            setTimeout(function () {
+                console.log("From Get Studnets");
+                let stdarr = [{ ID: 10, Name: "StdOne" }, { ID: 20, Name: "StdTwo" }, { ID: 30, Name: "Stdthree" }];
+                //return stdarr;// after 4 seconds
+                // displayAllStudents(stdarr);
+                callback(stdarr);
+            }, 2000);
+        }
+        // Mohamed
+        //function displayAllStudents(stdarr,callback) {
+        //    setTimeout(function () {
+        //        console.log("From Display All Studnets");
+        //        stdarr.forEach((std) => { console.log(`ID = ${std.ID} , Name = ${std.Name}`); });
+        //        let deptarr = [{ deptID: 100, deptName: "Cloud", deptMgr: "Mgrone" }, { deptID: 200, deptName: "Java", deptMgr: "Mgrtwo" }, { deptID: 300, deptName: "Application", deptMgr: "MgrThree" }];
+        //        //return deptarr;// after 4 seconds
+        //        //displayAllDepts(deptarr);
+        //        callback(deptarr, displayAllManagers);
+        //    }, 2000);
+        //}
+
+        // ALi
+        //function displayAllDepts(deptarr,callback) {
+        //    setTimeout(function () {
+        //        console.log("From Display All Depts");
+        //        let mgrarr = [];
+        //        deptarr.forEach((dept) => { console.log(`Dept ID = ${dept.deptID} , DeptName = ${dept.deptName}`); mgrarr.push(dept.deptMgr); })
+        //        // return mgrarr;
+        //        //displayAllManagers(mgrarr);
+        //        callback(mgrarr);
+        //    }, 2000);
+        //}
+        // Moustafa : print array of managers
+        //function displayAllManagers(mgrarr) {
+        //    console.log("From diaplay ALl Managers");
+        //    mgrarr.forEach((mgr) => { console.log(mgr); });
+        //}
+
+
+        //Ibraheem : run
+        //getAllStudents(displayAllStudents);
+        ////getAllStudents(function (stdarr, callback) {
+        //    setTimeout(function () {
+        //        console.log("From Display All Studnets");
+        //        stdarr.forEach((std) => { console.log(`ID = ${std.ID} , Name = ${std.Name}`); });
+        //        let deptarr = [{ deptID: 100, deptName: "Cloud", deptMgr: "Mgrone" }, { deptID: 200, deptName: "Java", deptMgr: "Mgrtwo" }, { deptID: 300, deptName: "Application", deptMgr: "MgrThree" }];
+        //        //return deptarr;// after 4 seconds
+        //        //displayAllDepts(deptarr);
+        //        callback(deptarr, displayAllManagers);
+        //    }, 2000);
+        //});
+
+
+        //let alldepts = displayAllStudents(allstds);// undefined
+        //let allmgrs = displayAllDepts(alldepts);//undefined
+        //displayAllManagers(allmgrs);
+
+
+        getAllStudents();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

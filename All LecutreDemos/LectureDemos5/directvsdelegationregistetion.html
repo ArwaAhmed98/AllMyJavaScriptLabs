@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- 333333333 -->
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table {
+            width: 400px;
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 3px;
+        }
+    </style>
+    <script>
+        // load event
+        window.addEventListener('load', function () {
+            targettable = document.getElementsByTagName('table')[0];
+            // direct registeation : event will fire only with current elements not future elements 
+            //var alltds = this.document.getElementsByTagName('td');
+            //for (var i = 0; i < alltds.length; i++) {
+            //    alltds[i].addEventListener('click', function () {
+            //        //this=> current td
+            //        this.style.backgroundColor = 'red';
+            //    });// end of click with every td
+            //}
+
+
+
+            // delegation registeation : delegate aprent element to listen over event with childrens 
+            // 
+            //targettable.addEventListener('click', function (e) {
+
+            //    //this=> table
+            //    if (e.target.nodeName=='TD')
+            //    e.target.style.backgroundColor = 'red';// target th | td => we need to select td 
+
+            //});//end of click with table
+        });//end of load
+
+        function addnewRow() {
+            // create tr : append tr inside table 
+            var createdtr = document.createElement('tr');
+            var createtdone = document.createElement('td');
+            createtdone.innerText = 'TD One';
+            var createtdtwo = document.createElement('td');
+            createtdtwo.innerText = 'TD Two';
+            createdtr.appendChild(createtdone);
+            createdtr.appendChild(createtdtwo);
+            targettable.appendChild(createdtr);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Add New Row" onclick="addnewRow();"/>
+    <table>
+        <tr>
+            <th>Serial</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>Ahmed</td>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>Moustafa</td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>Ibraheem</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // display time in title of document 
+        function ShowTime() {
+            var today = new Date();
+            document.title = today.toLocaleTimeString();
+        }
+        ShowTime();
+        // setInterval : every interval of time will execute function
+        /*setInterval("ShowTime()", 1000);// ms */
+        // setTimeOut("ShowTime()",1000); // after 1 s will execute ShowTime() just one time 
+        /*setTimeout("close()", 4000);*/
+        function startTimer() {
+            t=setInterval("ShowTime()", 1000);
+        }
+        function stopTimer() {
+            clearInterval(t);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Start" onclick="startTimer();" />
+    <input type="button" value="Stop" onclick="stopTimer();" />
+</body>
+</html>

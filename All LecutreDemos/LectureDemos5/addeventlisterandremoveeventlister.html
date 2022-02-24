@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- 4444444444444444444444444444444444444444444444444444444444 -->
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            width:400px;
+            height:400px;
+            border:2px solid black;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            this.document.getElementsByTagName('div')[0].addEventListener('click', funone); // bynfzhom b tarteeb el registration eli hwa da // this line
+            this.document.getElementsByTagName('div')[0].addEventListener('click', funtwo);
+            this.document.getElementsByTagName('div')[0].addEventListener('click', funthree);
+            this.document.getElementsByTagName('div')[0].addEventListener('mouseenter', mosuemoveeventhandeler);
+
+        });//end of load
+        function mosuemoveeventhandeler(e) {
+            console.log(e.offsetX + ' : ' + e.offsetY);
+        }
+        function funone () {
+
+            console.log("Fun One");
+        }
+        function funtwo() {
+
+            console.log("Fun Two");
+        }
+        function funthree() {
+
+            console.log("Fun Three");
+        }
+        function stopmousenter() {
+            // remove evenet mosueenter from target div 
+            this.document.getElementsByTagName('div')[0].removeEventListener('mouseenter', mosuemoveeventhandeler);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Stop Mouse Enter" onclick="stopmousenter()"/>
+    <div></div>
+</body>
+</html>

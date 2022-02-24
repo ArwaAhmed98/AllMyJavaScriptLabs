@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+         function openchildfun() {
+            childwindow=open("Child.html", "_blank", "width=500,height=500");
+        }
+        function closechildfun() {
+            childwindow.close();//
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h3>Parent Window</h3>
+    <a href="#" onclick="openchildfun()">Click Here</a>
+    <a href="#" onclick="closechildfun()">Close winow here</a>
+</body>
+</html>

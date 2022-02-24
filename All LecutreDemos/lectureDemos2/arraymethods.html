@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        /*var myarr = [10, 20, 30, 40];*/
+        // add value after last value with 50 as value
+        //1- you can use indexer : ot recommended : add holes 
+        /*myarr[40] = 50;*/
+        /*console.table(myarr);*/
+
+
+        // if you want to delete value from array : 
+        //1- delete myarr[1] => expected after delete [10,30,40] : in real [10,empty,30,40]; : not recommendd
+        // if you will use delete to delete items from array object it will leaves holes inisde array
+        //delete myarr[1];
+        //console.log(myarr);
+
+        // to deal with array object : use array object methods 
+        /*var myarr = [10, 20, 30, 40];*/
+        // push : add in ene dof array : append
+        
+        //unshift : add in front of array : prepend
+
+
+        // pop();/ return last value from array object and remove it 
+        // shift();// return first value from array object and remove it 
+
+
+        // predicate : function which accept value and return boolean
+        //function checkeven(val) {
+        //    if (val % 2 == 0) return true;
+        //    else return false;
+        //}
+
+        //var myarr = [1, 20, -10, 30, 5, 7, 100];
+        //// create an array object contains even numbers from myarr
+        //var result = [];
+        //for (var i = 0; i < myarr.length; i++) {
+        //    /*if (myarr[i] % 2 == 0)*/
+        //    if (checkeven(myarr[i]))
+        //    {
+        //        result.push(myarr[i]);
+        //    }
+        //}
+        //console.log(result);//contains even numbers
+
+
+
+
+
+
+
+       // function checkeven(val) {
+       //     if (val % 2 == 0) return true;
+       //     else return false;
+       // }
+
+
+
+       // var myarr = [1, 20, -10, 30, 5, 7, 100];
+       //var evennumber = myarr.filter(checkeven);//=> filter  return new array object [values whoch matched with predicate condition]
+
+
+
+
+
+        //function checkeven(val) {
+        //    if (val % 2 == 0) return true;
+        //    else return false;
+        //}
+
+
+
+        /*var myarr = [1, 20, -10, 30, 5, 7, 100];*/
+        //var evennumber = myarr.filter(checkeven);//=> filter  return new array object [values whoch matched with predicate condition]
+        //var evennumbers = myarr.filter(function checkeven(val) {
+        //    if (val % 2 == 0) return true;
+        //    else return false;
+        //});
+
+
+        //var evennumbers = myarr.filter(function (val) {// anonymous function : function without name : callbacks 
+        //    if (val % 2 == 0) return true;
+        //    else return false;
+        //});
+        //var evennumbers = myarr.filter(function (val) {return val % 2 == 0;});
+        //console.log(evennumbers);
+
+
+
+
+        // sort  : sort values within array
+        /*var myarr = [1, 20, -10, 30, 5, 7, 100];*/
+        //myarr.sort();// by default asci sort  : to change sort to work with numbers you have to write coparasion method
+
+        /* comparing : ( a, b ) => if a>b => else if a<b ; else */
+        /*
+         * compare two number like a , b to sort them 
+         * 1- a > b : swapping 
+         * 2- a<b
+         * a==b
+         * */
+        // call back which will be sent to sort return number (a,b)(if positive a > b : negative a< b , zero a=b)
+        //function mysorter(a, b) {
+        //    if (a > b) return 1;
+        //    else if (a < b) return -1;
+        //    else return 0;
+        //}
+        //myarr.sort(mysorter);
+        //myarr.sort(function mysorter(a, b) {
+        //    if (a > b) return 1;
+        //    else if (a < b) return -1;
+        //    else return 0;
+        //});
+        //myarr.sort(function (a, b) {
+        //    if (a > b) return 1;
+        //    else if (a < b) return -1;
+        //    else return 0;
+        //});
+
+
+       // myarr.sort(function (a, b) {return a - b;}).reverse(); // method chaining 
+        //console.log(myarr);
+
+
+        // forEach : loop over array : method 
+
+        var myarr = [1, 20, -10, 30, 5, 7, 100];
+        // forEach
+        /*myarr.forEach(function (val, index) { console.log("Arr[" + index + "] = " + val);})*/
+
+        /*var evennumbers = myarr.filter(function (val) { return val % 2 == 0; });*/
+        //for (var i = 0; i < evennumbers.length; i++) {
+        //    console.log(i + " : " + evennumbers[i])
+        //}
+
+
+
+        myarr.filter(function (val) { return val % 2 == 0; })
+            .forEach(function (val, inde) { console.log(inde ,val); })
+
+
+        /*var myarr = [1, 2, 3, 4, 5, 6, 7];*/
+        // reduce  :  reduce array object in just one value
+        var summation = myarr.reduce(function (p, n) { return p += n; });
+        //var multiply = myarr.reduce(function (p, n) { return p *= n; });
+        // we need to summ array values : 
+        //var names = ["Ahmed", "mohamed", "Ibraheem", "Nasr"];
+        //var namesreduced = names.reduceRight(function (p, n) { return p += n });
+        // reduce right 
+        // some ,  => just one bool value : true or false according to condition
+        //var myarr = [1, 2, 3, 4, 5, 6, 7];//
+        //console.log(myarr.every(function (val) { return val % 2 == 0; })); // hal kol el elements fel array divided by 2?
+        //every
+        //map
+        /*var names = ["Ahmed", "mohamed", "Ibraheem", "Nasr"];*/
+        // names => emailes for employees : names@iti.gov.eg
+        //names.map(function (val) { return val + "@iti.gov.eg" })
+        //    .forEach(function (val) { console.log(val);});
+
+
+
+        //join : for arrays
+        // by default array epeartor , seperator
+        var myarr = [10, 20, 30, 40];
+        // we need to generat new string contains array values seperated by +
+        // 10+20+30+40 => default 10,20,30,40
+        //var plusseperator=myarr.join("+")//=> return string
+
+        // eval(valid js expression) => execute expression : 
+       
+        //[]
+        var usernumber = 100;
+        console.log(usernumber);// 100
+        eval(prompt("enter value")); // usernumber=-100;
+        console.log(usernumber);
+        //var userinput = prompt("Enter Your values seperated by comm", "10,20,30,40");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

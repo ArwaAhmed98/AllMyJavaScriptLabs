@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        class Person {
+            constructor(_id, _name) {
+                // detect type after new keyword : if type is a person prevent creation ( raise Error )
+                if (new.target.name == "Person") {
+                    throw new Error("You Can't Create An Object From bastract Class !!")
+                }
+                this.ID = _id;
+                this.Name = _name;
+            }
+            Print() {
+                return `ID = ${this.ID} , Name = ${this.Name}`;
+            }
+        }
+
+        class Student extends Person {
+            constructor(_id, _name, _intake) {
+                // in case inheritance you have to call super constructor (as first line inside derived constrtcuor) before setting of member fileds inside derived constructor
+                // use keyword super 
+                super(_id, _name);
+                this.Intake = _intake;// error : 
+            }
+            Print() {
+                /* return `ID = ${this.ID} , Name = ${this.Name} , Intake = ${this.Intake}`;*/
+                return `${super.Print()}, Intake = ${this.Intake}`;
+            }
+        }
+        class Employee extends Person {
+            constructor(_id, _name, _salary) {
+                // in case inheritance you have to call super constructor (as first line inside derived constrtcuor) before setting of member fileds inside derived constructor
+                // use keyword super 
+                super(_id, _name);
+                this.Salary = _salary;
+            }
+            Print() {
+                /* return `ID = ${this.ID} , Name = ${this.Name} , Intake = ${this.Intake}`;*/
+                return `${super.Print()}, Salary= ${this.Salary}`;
+            }
+        }
+
+       // let pone = new Person(100, "Person Object");// prevent creation explicitly from person as class using keyword new | we need to inherit it : abstarct class 
+
+       //let stdone = new Student(10, "Stduent Object", "42");
+       let empone = new Employee(1000, "Employee Object", 2000);
+// stdone.print(); //trueeeeeeee
+        //let staff = [stdone, empone];// any object from type person has Print Method 
+
+
+        //for (var i = 0; i < staff.length; i++) {
+        //   console.log( staff[i].Print());// 
+        //}
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

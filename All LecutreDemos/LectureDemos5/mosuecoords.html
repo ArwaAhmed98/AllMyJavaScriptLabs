@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            width:255px;
+            height:255px;
+            border:1px solid black;
+            margin:10px auto;
+        }
+    </style>
+    <script>
+        // load event 
+        window.addEventListener('load', function () {
+            // select target div
+            /*var targetdiv = this.document.getElementsByTagName('div')[0];*/
+            var targetdiv = document.querySelector("div");
+            targetdiv.addEventListener('mousemove', function (e) {
+                /*console.log(e.offsetX + " : " + e.offsetY);*/
+                this.style.backgroundColor = "rgb(" + e.offsetX + "," + e.offsetY + "," + e.offsetX + ")"
+                // offsetX | offsetY => relative to upper left corenr for current element : div 
+                // clientX | client Y : relative to appread space inside body :upper left corent for area 
+                // page x | page Y  => relative to whole page inncluding scrollers 
+            });//end of mousemove
+        });//end of load
+    </script>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

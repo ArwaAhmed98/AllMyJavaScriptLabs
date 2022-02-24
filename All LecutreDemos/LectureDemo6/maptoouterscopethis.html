@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Person(id, name) {
+            this.ID = id;
+            this.Name = name;
+            /*var that = this;// create object */
+            setTimeout( ()=> { // this => caller to setTimeOut =>window dont have id and name so undefined
+                
+                console.log(`ID = ${this.ID} , Name = ${this.Name}`);
+            }, 4000);
+        }
+
+        let pone = new Person(100,"Ali");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

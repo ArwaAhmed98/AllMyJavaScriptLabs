@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- 22222222222222222 -->
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table{
+            width:400px;
+            border:2px solid black;
+            text-align:center;
+            margin:10px auto;
+            padding:10px;
+        }
+        td,th{
+            border:1px solid black;
+            padding:3px;
+        }
+    </style>
+    <script>
+        // load event
+        window.addEventListener('load', function () {
+            // this=> window
+            //select table : register click event with table : show what s the difference between this and target in event registeration function
+            // in case event registeration : this => map to object wich listen on event : اللى بي listen to event  
+            // target : map to element wich occurs event over it :اللى حصل على مستواه event
+            document.getElementsByTagName("table")[0].addEventListener('click', function (e) {
+                // this => table
+                //this.style.backgroundColor = "red";
+                /*e.target.style.backgroundColor = 'red';*/
+                //console.log(e.target.nodeName);//return name of element which fire event => capital case name : "TD" : "TH"
+                if (e.target.nodeName == "TD")
+                    e.target.style.backgroundColor = 'red';
+                // target : property inside object event wich will be send to event ahndeler as anonymouse object
+
+            });//end of click with table
+
+        });//end of load
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Serial</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>Ahmed</td>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>Moustafa</td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>Ibraheem</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //function myfun(callback) {
+        //   console.log( callback());
+        //}
+        //function myfun2() {
+        //    return "from my funtwo";
+        //}
+        //myfun(myfun2);
+
+        /*myfun(function () { return "From Anonmyouse Function"; });*/
+
+
+
+        //var testfun = function () { console.log("Hello From test Fun"); }
+
+        //testfun();
+
+
+
+        //var student = {
+        //    ID: 100,
+        //    Name: "Student Name",
+        //    Print: function () { console.log("From Print Function");}
+        //}
+        //student.Print();
+
+
+
+
+        // function statements :
+        // fucntion declaration
+        //function Sum (a,b) {
+        //    return a + b;
+        //}
+        // function call
+       //console.log( Sum(2, 3));
+
+
+
+
+        // fucntion Expression :  name is optional
+        //var myfun = function (a, b) {
+        //    return a + b;
+        //}
+
+
+        // overloading for function
+        //function Sum(a, b) {
+        //    return a + b;
+        //}
+        //function Sum(a, b,c) {
+        //    return a + b+c;
+        //}
+        //function Sum(a, b,c,d) {
+        //    return a + b+c+d;
+        //}
+        //console.log(Sum(10, 20));
+
+
+        //function myfun() {
+        //    // return ; | return undefined
+        //}
+        //function myfun(a) {
+        //    if(a>10)
+        //        return 100;
+          
+        //}
+        //console.log(myfun(1)+1000);
+        //var a = 100// ;
+        //var b = 200//;
+
+        //function getanObject() {
+        //    return//; // return ; => undefined
+        //    {
+        //        ID: 100
+                
+        //    }
+        //}
+
+        //console.log(getanObject());
+
+
+        //var Sum=function() {
+        //    // arguments :  object : [10,20,30,40,50,60]
+        //    /*console.log(arguments);*/
+        //    var result = 0;
+        //    // arguments not array object : array Like Object
+        //    for (var i = 0; i < arguments.length; i++) {
+        //        result += arguments[i];
+        //    }
+        //    return result;
+        //}
+
+        //console.log( Sum(10, 20, 30));
+
+
+
+
+        // this => inside function map to caller object
+
+   /*     var ID, Name;*/
+
+        var student = {
+           ID: 100,
+           Name: "Nasr",
+        //    //Print: function () {
+
+        //    //    console.log("ID = " + ID + " : Name = " + Name); // keda el ID undefined value 
+        //    //}
+           Print: function () {
+               console.log("ID = " + this.ID + " : Name = " + this.Name);
+            //    console.log("ID = " + student.ID + " : Name = " + student.Name); // or this=> caller object eli hwa student
+           }
+        }
+
+        student.Print();// this inside function map to caller object => 
+
+
+
+
+        //function SalueteME() {
+        //    console.log(this);
+        //}
+
+
+        //SalueteME(); // window object hwa el caller
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

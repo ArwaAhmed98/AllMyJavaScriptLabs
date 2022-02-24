@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        var names = ["Sandra", "Eman", "Ahmed", "Osama", "Nada", "Arwa", "Mohamed"];
+       function randomPlayers() {
+            str="";
+            document.getElementById("mypara").innerText=str;
+            var name1,name2;
+        function generaterandom(max)
+        {
+            return Math. floor(Math. random() * (max + 1)); // between 0 and max=>length of arr
+        }
+           for(var i=0;i<2;i++){
+            str = str + names[generaterandom(names.length - 1)] ;
+            document.getElementById("mypara").innerText=str;
+           }
+        }
+        setInterval("randomPlayers()",1000);
+    </script>
+</head>
+<body>
+    <p id="mypara"></p>
+</body>
+</html>

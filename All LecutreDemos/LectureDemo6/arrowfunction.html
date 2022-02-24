@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //SaluetMe();
+        //function SaluetMe() {
+        //    console.log("Hello");
+        //}
+
+        /*let SaluteMe = function () { console.log("Hello");} // function expression*/
+
+
+        /*let SaluteMe = () => { console.log("Hello"); }*/
+        /*let SaluteMe = () => { return "Hello"; }*/
+        /*let SaluteMe = () => "Hello";*/ // if the arrow function has only 1 return statments
+        /*console.log(SaluteMe());*/
+
+
+        //function isEven(val) {
+        //    if (val % 2 == 0) return true;
+        //    else return false;
+        //}
+        /* let isEven = (val) => { return val % 2 == 0; }*/
+        /*let isEven = (val) =>  val % 2 == 0;*/
+        /*let isEven = val => val % 2 == 0;*/
+////////////////////cannot be user as contructors///////////////////////////////////
+
+        //let person=(id, name)=>{
+        //    this.ID = id;
+        //    this.Name = name;
+        //}
+        //let ahmed = new person(100,"Ahmed");
+
+        //let myfun = ()=>{
+        //    console.log(arguments);
+        //}
+        //myfun(100, 200, 300);
+
+
+
+
+        //const Person = {
+        //    ID: 100,
+        //    Name: "Nasr",
+        //    Print: function () { console.log(`ID = ${this.ID} , Name = ${this.Name}`); } // will work normally
+        //}
+
+        //Person.Print();// caller => Person => this map to caller : Person
+
+
+        // window : ID , Name => undefined
+
+        //const Person = {
+        //    ID: 100,
+        //    Name: "Nasr",
+        //    Print: ()=> { console.log(`ID = ${this.ID} , Name = ${this.Name}`); }
+        //}
+
+        //Person.Print();
+        window.addEventListener('load', function () {
+            // this => window
+            let alllis = this.document.getElementsByTagName('li');
+            // register clicj event with every li
+            this.document.getElementsByTagName('div')[0].onclick =  function() { // 
+                // this=> map div
+                for (let i = 0; i < alllis.length; i++) {
+                    //alllis[i].onclick = function () {
+                    //    // this => li
+                    //    alert(this.innerText); /// onclick display an alert with every li text
+                    //}
+
+                    alllis[i].onclick = () => {
+                        // this => Map Outer Scoped This => this==> outer scope  // underfined
+                        alert(this.innerText);// 
+                    }
+                }
+            }
+        });//end of load
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+</body>
+</html>

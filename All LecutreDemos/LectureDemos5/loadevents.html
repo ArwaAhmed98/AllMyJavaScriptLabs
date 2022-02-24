@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- 1111111111111111111111111 -->
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // select element with paraone : null => reference
+        /*document.getElementById("paraone").innerText = "Cloud Track";// Error :*/
+
+        // load event : with html body 
+        //function ff() {
+        //    document.getElementById("paraone").innerText = "Cloud Track";
+        //}
+
+        //window.onload = function () {
+        //    document.getElementById("paraone").innerText = "Cloud Track";
+        //};//end of load
+
+
+        // method addEventListener(EventName,EventHandeler (function));
+        // Event Names Will be written without on : ex : onload : html or window.onload in js 
+        // with addEventListener : onload will be used as load
+        //window.addEventListener('load', ff); // mshh bktb ff() 3shan msh ana eli b3ml call Lel function // eli bycall hwa windows object Lma el load event Y-fire
+        //function ff() {
+        //    document.getElementById("paraone").innerText = "Cloud Track";
+        //}
+        // pros : with regietartion in js  by default an object from event type will be passed to event handeler 
+        //: event object  will contain set of data like target ans set of properties like coords for mouse or keyboard keys 
+        //window.addEventListener('load', function (e) {
+        //    console.log(e);
+
+        //});
+
+        window.addEventListener('load', function () {
+
+            window.document.getElementById('paraone').addEventListener('click', function (e) {
+                console.log(e);
+
+            });//end of click event with paraone element
+
+        });//end of load
+
+
+    </script>
+</head>
+<body>
+    <p id="paraone">Infromation Technology Institute</p>
+</body>
+</html>

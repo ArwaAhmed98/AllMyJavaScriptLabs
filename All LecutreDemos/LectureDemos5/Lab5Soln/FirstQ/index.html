@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+
+       window.addEventListener('load', function () {
+                targettable=document.getElementsByTagName("table")[0];
+                targettable.style.border="1px solid black";
+                var tableRow = document.createElement('tr');
+                var tableHead1 = document.createElement('th');     
+                tableHead1.innerText='NEWS';
+                tableRow.appendChild(tableHead1);
+                targettable.appendChild(tableRow);
+                document.getElementById("btn_submit").addEventListener('click',function(){
+                usr_txt=document.querySelector('input[type=text]').value; // css propetry   
+                if(CheckisEmpty(usr_txt)){
+                targettable.style.border="2px solid black";
+                checkRadio = document.querySelector('input[name="Radios"]:checked').value; // return value which radio is selected
+                var createdtr = document.createElement('tr');
+                var col = document.createElement('td');
+                col.innerText=usr_txt;
+                switch(checkRadio){
+                    case 'sports':
+                        createdtr.style.backgroundColor="red";
+                    break;
+                    case 'social':
+                        createdtr.style.backgroundColor="blue";
+                    break;
+                    case 'policits':
+                        createdtr.style.backgroundColor="yellow";
+                    break;  
+                    default:
+                    break;
+                }
+                createdtr.appendChild(col);
+                targettable.appendChild(createdtr);
+                }
+                else{
+                    alert("empty string,Try again!");
+                }
+           });
+        });
+     function  CheckisEmpty(txt){
+         if (txt=="") return false;
+         else return true;
+     }
+    </script>
+    <style>
+        .container{
+            width: 50%;
+            /* border: 2px solid black; */
+            margin: 10px auto;
+            text-align: center;
+        }
+        #form table{
+            margin-top: 20px;
+            margin: 10px auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label><input value="sports" type="radio" name="Radios" checked> Sports</label>
+        <label><input value="social" type="radio" name="Radios" > Social</label>
+        <label><input  value="policits" type="radio" name="Radios" > Policits</label>
+    <div id="form">
+        <input type="text"  placeholder="add here">
+        <input type="submit" value="Add" id="btn_submit">
+        <table>
+
+        </table>
+</div>
+</div>
+
+</body>
+</html> 

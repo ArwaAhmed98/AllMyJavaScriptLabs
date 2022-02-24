@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //function myfunone() {
+        //    alert("you clicked Button One");
+        //}
+        //function myfuntwo() {
+        //    alert("you clicked Button Two");
+        //}
+        //function myfunthree() {
+        //    alert("you clicked Button Three");
+        //}
+        //function myfunfour() {
+        //    alert("you clicked Button Four");
+        //}
+
+
+        // version two
+        //function displayButtonName(e) {
+        //    alert("Button Clicked : "+e);
+        //}
+
+
+
+
+        // version three // send input tag kolha lel function 3shan lw 3yza 2wsl L 2i propetry fel js 
+        // function displayButtonName(e) {
+        //    console.log(e.value , e.name);
+        // }
+
+
+
+
+        // version four
+        //function displayButtonName(e) {
+        //    console.log(e.target.value);
+        //}
+    </script>
+</head>
+<body>
+    <!--<input type="button" value="ButtonOne" onclick="myfunone();" /><br />
+    <input type="button" value="ButtonTwo" onclick="myfuntwo();" /><br />
+    <input type="button" value="ButtonThree" onclick="myfunthree();" /><br />
+    <input type="button" value="ButtonFour" onclick="myfunfour();" /><br />-->
+    <!--<input type="button" value="ButtonOne" name="iti" onclick="displayButtonName('ButtonOne');" /><br />
+    <input type="button" value="ButtonTwo" name="Mansoura" onclick="displayButtonName('ButtonTwo');" /><br />
+    <input type="button" value="ButtonThree" name="Alex" onclick="displayButtonName('ButtonThree');" /><br />
+    <input type="button" value="ButtonFour" name="Cairo" onclick="displayButtonName('ButtonFour');" /><br />-->
+    <!--<input type="button" value="ButtonOne" name="iti" onclick="displayButtonName(this);" /><br />
+    <input type="button" value="ButtonTwo" name="Mansoura" onclick="displayButtonName(this);" /><br />
+    <input type="button" value="ButtonThree" name="Alex" onclick="displayButtonName(this);" /><br />
+    <input type="button" value="ButtonFour" name="Cairo" onclick="displayButtonName(this);" /><br />-->
+    <!-- send object event : if you register event inside html tags : you have to pass event object to event handeler because it not passed implicity  -->
+    <!-- event object : using keyword event => event object -->
+    <input type="button" value="ButtonOne" name="iti" onclick="displayButtonName(event);" /><br />
+    <input type="button" value="ButtonTwo" name="Mansoura" onclick="displayButtonName(event);" /><br />
+    <input type="button" value="ButtonThree" name="Alex" onclick="displayButtonName(event);" /><br />
+    <input type="button" value="ButtonFour" name="Cairo" onclick="displayButtonName(event);" /><br />
+
+<!-- 
+
+    <input type="button" value="ButtonOne" name="iti"  /><br />
+    <input type="button" value="ButtonTwo" name="Mansoura"  /><br />
+    <input type="button" value="ButtonThree" name="Alex" /><br />
+    <input type="button" value="ButtonFour" name="Cairo" /><br /> -->
+
+    
+    <script>
+        // for (var i = 0; i < 10; i++) {
+        //     var createdp = document.createElement("p");
+        //     createdp.onclick = function (e) { console.log(e.target.innerText); } // register event on creation
+        //     createdp.innerText = "Pppppppppp "+i;
+        //     document.body.appendChild(createdp);
+        // }
+        
+        // // select all inut from type button 
+        // // loop over inputs  register click event with every button 
+        // var allbtns = document.querySelectorAll("input[type=button]");
+        // for (var i = 0; i < allbtns.length; i++) {
+        //    allbtns[i].onclick = myfun;
+        // }
+        // function myfun() {
+        //    console.log("From My Fun");
+        // }
+
+
+
+        // var allbtns = document.querySelectorAll("input[type=button]");
+        // for (var i = 0; i < allbtns.length; i++) {
+        //    allbtns[i].onclick = function (e) {
+        //        console.log(e.target.value);
+        //    }
+        // }
+        // in case : register event with ecent handeler in js by default an object event will be send to event handleere 
+
+        function displayButtonName(e) {
+           console.log(e.target.value , e.name);
+        }
+        
+    </script>
+
+
+</body>
+</html>

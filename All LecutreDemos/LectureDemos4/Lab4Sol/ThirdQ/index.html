@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .para{
+            width: 40%;
+            border: 2px solid red;
+        }
+        .para p{
+            margin: 2px;
+        }
+        table tr td,th{
+            border-left:2px solid ;
+        }
+
+    </style>
+</head>
+<body>
+<div >
+    <p  id="para" class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aspernatur inventore cupiditate adipisci et repudiandae, reiciendis ipsam aliquam deleniti eos molestias labore praesentium veritatis quam, quae accusantium delectus vel eaque!</p>
+</div>
+<table border="1px">
+    <tr>
+        <th>TextAlign</th>
+        <th>LineHeight</th>
+        <th>letterspacing</th>
+        <th>textTransform</th>
+        <th>textDeciration</th>
+        <th>textBorder</th>
+        <th>BorderColor</th>
+    </tr>
+   <tr>
+   <td>
+    <input type="radio" 
+    name="TextAlign" value="left">
+   <label for="">Left</label><br>
+
+   <input type="radio" 
+   name="TextAlign" value="right" >
+  <label for="">Right</label> <br>
+
+    <input type="radio" 
+    name="TextAlign" value="center">
+   <label for="">Center</label><br>
+</td>
+<td>
+    <input type="radio" 
+    name="LineHeight" value="10px" >
+   <label for="">10px</label><br>
+
+   <input type="radio" 
+   name="LineHeight" value="20px" >
+  <label for="">20px</label> <br>
+
+    <input type="radio" 
+    name="LineHeight" value="25px" >
+   <label for="">25px</label><br>
+</td>
+<td>
+    <input type="radio" 
+    name="letterspacing" value="2px" onclick="letterSpacing(event);">
+   <label for="">2px</label><br>
+
+   <input type="radio" 
+   name="letterspacing" value="5px" onclick="letterSpacing(event);">
+  <label for="">5px</label> <br>
+
+    <input type="radio" 
+    name="letterspacing" value="7px" onclick="letterSpacing(event);">
+   <label for="">7px</label><br>
+</td>
+ 
+<td>
+    <input type="radio" 
+    name="textTransform" value="Uppercase" onclick="textTransform(event);">
+   <label for="">Uppercase</label><br>
+
+   <input type="radio" 
+   name="textTransform" value="LowerCase" onclick="textTransform(event);">
+  <label for="">LowerCase</label> <br>
+
+    <input type="radio" 
+    name="textTransform" value="none" onclick="textTransform(event);">
+   <label for="">none</label><br>
+</td>
+ 
+<td>
+    <input type="radio" 
+    name="textDeciration" value="Underline" onclick="TextDecoration(event);">
+   <label for="">Underline</label><br>
+
+   <input type="radio" 
+   name="textDeciration" value="line-through" onclick="TextDecoration(event);">
+  <label for="">LineThrough</label> <br>
+
+    <input type="radio" 
+    name="textDeciration" value="none" onclick="TextDecoration(event);">
+   <label for="">none</label><br>
+</td>
+ 
+ 
+<td>
+    <input type="radio" 
+    name="textBorder" value="solid" onclick="Border(event);">
+   <label for="">solid</label><br>
+
+   <input type="radio" 
+   name="textBorder" value="dotted" onclick="Border(event);">
+  <label for="">dotted</label> <br>
+
+    <input type="radio" 
+    name="textBorder" value="none" onclick="Border(event);">
+   <label for="">none</label><br>
+</td>
+<td>
+    <input type="radio" 
+    name="BorderColor" value="blue" onclick="bordercolor(event);">
+   <label for="">blue</label><br>
+
+   <input type="radio" 
+   name="BorderColor" value="red" onclick="bordercolor(event);">
+  <label for="">red</label> <br>
+
+    <input type="radio" 
+    name="BorderColor" value="black" onclick="bordercolor(event);">
+   <label for="">black</label><br>
+</td>
+ 
+   </tr>
+</table>
+<script>
+    /***********Register event in JS only********************/
+
+var allbtns = document.getElementsByName("TextAlign");
+        for (var i = 0; i < allbtns.length; i++) {
+           allbtns[i].onclick = function (e) {
+            document.getElementById("para").style.textAlign = e.target.value;
+           }}
+
+
+
+var R_LineHeight = document.getElementsByName("LineHeight");
+        for (var i = 0; i < allbtns.length; i++) {
+            R_LineHeight[i].onclick = function (e) {
+            document.getElementById("para").style.lineHeight = e.target.value;
+           }}
+//////////////////////////*************using onclick option*************** ///////////////////////////////////////////////
+    // function TxtAlign(e){
+    //     //  var val=e.target.value;
+    //     console.log(e.target.value);
+    //      document.getElementById("para").style.textAlign = e.target.value;
+
+    // }
+    // function LineHeig(e){
+    //     //  var val=e.target.value;
+    //     console.log(e.target.value);
+    //      document.getElementById("para").style.lineHeight = e.target.value;
+
+    // }
+
+    function letterSpacing(e){
+        //  var val=e.target.value;
+        console.log(e.target.value);
+         document.getElementById("para").style.letterSpacing = e.target.value;
+
+    }
+    function textTransform(e){
+        document.getElementById("para").style.textTransform = e.target.value;
+
+    }
+    function TextDecoration(e){
+        document.getElementById("para").style.textDecoration = e.target.value;
+
+    }
+    function Border(e){
+        document.getElementById("para").style.border = e.target.value;
+
+    }
+    function bordercolor(e){
+        document.getElementById("para").style.borderColor = e.target.value;
+    }
+
+
+    //  document.getElementsByName("BorderColor").onclick = function(e){ // the function implicity t
+    //     var css_value=document.getElementsByName("BorderColor").value;
+    //     console.log(css_value);
+    //     console.log(e.target.value);
+    //     document.getElementById("para").style.lineHeight=css_value;
+      
+    //  }
+</script>
+</body>
+</html>

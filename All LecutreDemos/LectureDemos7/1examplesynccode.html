@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // nasr
+        function getAllStudents() {
+            // not return direct students array : take in memeroy 4 second to return data
+            setTimeout(function () {
+                console.log("From Get Studnets");
+                let stdarr = [{ ID: 10, Name: "StdOne" }, { ID: 20, Name: "StdTwo" }, { ID: 30, Name: "Stdthree" }];
+                return stdarr;// after 4 seconds
+            }, 4000);
+        }
+        // Mohamed
+        function displayAllStudents(stdarr) {
+            setTimeout(function () {
+                console.log("From Display All Studnets");
+                stdarr.forEach((std) => { console.log(`ID = ${std.ID} , Name = ${std.Name}`); });
+                let deptarr = [{ deptID: 100, deptName: "Cloud", deptMgr: "Mgrone" }, { deptID: 200, deptName: "Java", deptMgr: "Mgrtwo" }, { deptID: 300, deptName: "Application", deptMgr: "MgrThree" }];
+                return deptarr;// after 4 seconds
+            }, 4000);
+        }
+
+        // ALi
+        function displayAllDepts(deptarr) {
+            setTimeout(function () {
+                console.log("From Display All Depts");
+                let mgrarr = [];
+                deptarr.forEach((dept) => { console.log(`Dept ID = ${dept.deptID} , DeptName = ${dept.deptName}`); mgrarr.push(dept.deptMgr); })
+                return mgrarr;
+            }, 4000);
+        }
+        // Moustafa : print array of managers
+        function displayAllManagers(mgrarr) {
+            console.log("From diaplay ALl Managers");
+            mgrarr.forEach((mgr) => { cosnole.log(mgr); });
+        }
+
+
+        //Ibraheem : run 
+        let allstds = getAllStudents();// undefined
+        let alldepts = displayAllStudents(allstds);// undefined
+        let allmgrs = displayAllDepts(alldepts);//undefined
+        displayAllManagers(allmgrs);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

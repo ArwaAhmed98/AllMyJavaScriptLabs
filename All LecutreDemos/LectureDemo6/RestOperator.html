@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //function getResult(op) { // myf34 23rf hena el numbers of equation as parameter bs mmkn defined as argument
+        //    let result = 0;
+        //    switch (op) {
+        //        case "+":
+        //            for (var i = 1; i < arguments.length; i++) {
+        //                result += arguments[i];
+        //            }
+        //            break;
+        //        case "*":
+        //            result = 1;
+        //            for (var i = 1; i < arguments.length; i++) {
+        //                result *= arguments[i];
+        //            }
+        //            break;
+        //        default:
+        //            result = 0;
+        //            break;
+        //    }
+        //    return result;
+        //}
+        //console.log(getResult("/", 1, 2, 3,4));
+        // call getResult("+",1,2,3,4,5,6);// Summation
+        // call getResult("*",1,2,3,4);// Multiplaction
+
+
+
+
+        // version two
+
+        //function getResult(op) {
+        //    let myarr = [];
+        //    for (var i = 1; i < arguments.length; i++) {
+        //        myarr.push(arguments[i]);
+        //    }
+        //    return eval(myarr.join(op));
+            
+        //}
+        //console.log(getResult("*", 1, 2, 3, 4));
+
+
+
+        // version three using rest operator ...
+        // ...myarr => rest : represent content as array object
+        // ... rest : must be the last formal parameter 
+        // ... function can't contains more than one rest operator
+
+        //function getResult(op,...myarr) { // put first parameter as operation and the rest of param push it in the array
+        //    return eval(myarr.join(op));
+        //}
+        ////console.log(getResult("+", 1, 2, 3, 4));
+        //let numbersarr = [1, 2, 3, 4, 5];
+        ///*console.log(getResult("+", numbersarr));// you have to spread this array  : otherwise you will have the last value from array object */
+        //console.log(getResult("+", ...numbersarr));// ... means spread
+
+
+        //let arrone = [100, 200, 300, 400];
+        //let arr2 = [1000, ...arrone, 2000];//=> expeceted : [1000,100,200,300,400,2000];// real [1000,[100,200,300,400],2000];
+
+
+        //let myarr = [-100, 200, -50, 1000, 10];// get min and max from this array
+        //console.log(Math.min(...myarr));
+
+        /*Math.max()*/
+
+        // ... : rest : in case parameters form function
+        //... : spread : in fucntion call which accept rest ( spread array object )
+    </script>
+</head>
+<body>
+
+</body>
+</html>

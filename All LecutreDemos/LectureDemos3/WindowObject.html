@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // small letters : created objects 
+        //var myvar = 10;
+        //console.log(window.myvar);
+        //function myfun() {
+        //    console.log(this);
+        //    /*alert("hello");*/
+        //}
+        //window.myfun();// window.myfun();
+        /*window.document.write("Hello");*/
+        /*document.write("hello");*/
+        function openchildfun() {
+            // open => childwindow.html
+            childwindow=open("childwindow.html", "", "width=200,height=200");
+        }
+        function closechildfun() {
+            // close : opened window
+            childwindow.close();//
+        }
+        var myobj = {
+            ID: 100,
+            Name:"Ahmed"
+        }
+        function movechildfun() {
+            childwindow.moveBy(20, 20);
+            childwindow.focus();
+        }
+    </script>
+</head>
+<body>
+    <h3>Parent Window</h3>
+    <input type="button" value="OpenChild" onclick="openchildfun()" /><br />
+    <input type="button" value="CloseChild" onclick="closechildfun()" /><br />
+    <input type="button" value="MoveChild" onclick="movechildfun()" /><br />
+</body>
+</html>

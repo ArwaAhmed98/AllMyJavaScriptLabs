@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+       var i=0;
+       window.addEventListener('load', function () {
+                document.getElementById("btn_submit").addEventListener('click',function(){
+                targettable = document.getElementsByTagName('table')[0];
+                targettable.style.border="2px solid black";
+                usr_txt=document.querySelector('input[type=text]').value; // css propetry
+                if(usr_txt==""){alert("empty string!");} // validation
+                checkRadio = document.querySelector('input[name="Radios"]:checked').value; // return value which radio is selected
+                if(i==0){ // create the table head only on the first click
+                    var tableRow = document.createElement('tr');
+                    var tableHead1 = document.createElement('th');
+                    var tableHead2 = document.createElement('th');
+                    var tableHead3 = document.createElement('th');
+                    tableHead1.innerText='Sports';
+                    tableHead2.innerText='Social';
+                    tableHead3.innerText='Poltiics';
+                    tableRow.appendChild(tableHead1);
+                    tableRow.appendChild(tableHead2);
+                    tableRow.appendChild(tableHead3);
+                    targettable.appendChild(tableRow);
+                    Chck_Radio();
+                    i++;
+                }
+                else{
+                    Chck_Radio();
+                }
+           });
+         
+
+        });
+        function Chck_Radio(){
+            if(checkRadio=='sports'){
+                        addRow(usr_txt,1);
+                    }
+            else if(checkRadio=='social'){
+                        addRow(usr_txt,2);
+                        
+                    }
+            else{ // poltics
+                        addRow(usr_txt,3);
+                    }
+
+        }
+        function addRow(txt,num){
+            var createdtr = document.createElement('tr');
+            var createtdone = document.createElement('td');
+            var createtdtwo = document.createElement('td');
+            var createtdoneT = document.createElement('td');
+            
+            var arr = [createtdone,createtdtwo,createtdoneT]; // my three cols in array
+            createtdone.innerText='';
+            createtdtwo.innerText='';
+            createtdoneT.innerText='';
+            
+
+            if(num==1){ // swithc case 
+                // createtdone.innerText = txt;
+                // createtdtwo.innerText = '';
+                // createtdoneT.innerText = '';
+                arr[0].innerText=txt;
+
+            }
+            else if(num==2){
+                arr[1].innerText=txt;
+            }
+            else{
+                arr[2].innerText=txt;
+            }
+            createdtr.appendChild(createtdone);
+            createdtr.appendChild(createtdtwo);
+            createdtr.appendChild(createtdoneT);
+            targettable.appendChild(createdtr);
+        }
+    </script>
+    <style>
+        .container{
+            width: 50%;
+            /* border: 2px solid black; */
+            margin: 10px auto;
+            text-align: center;
+        }
+        #form table{
+            margin-top: 20px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label><input value="sports" type="radio" name="Radios" checked> Sports</label>
+        <label><input value="social" type="radio" name="Radios" > Social</label>
+        <label><input  value="policits" type="radio" name="Radios" > Policits</label>
+    <div id="form">
+        <input type="text"  placeholder="add here">
+        <input type="submit" value="Add" id="btn_submit">
+        <table>
+
+        </table>
+</div>
+</div>
+
+</body>
+</html> 

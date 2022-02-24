@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        /*
+         global scope for script 
+
+         */
+        /* ; end of statement ( optional ) : reommendd to write ; after each statement*/
+        //var mynumer = 20;
+        // when you declare variable with var keyword you can initialize or leave initailization
+        //var mynumer;// undefined
+        // if you declare variable without var : you have to iitialize it 
+        //mynumer;// invalid syntax for js : error
+        //mynumer = 20;// valid declaration : scope mynumber is gobal scope can you access it from any where inside script tag 
+        // you can declare varibles inside script without var 
+
+        // recommende to use var in varible declaration : according strict mode for writting js 
+        //function myfun() {
+        //    console.log("From Fun MyNumber = " + mynumer);
+        //}
+        //myfun();//calling
+        //console.log("From Script Scope : "+mynumer);
+
+
+
+        // local variables :
+        // variables declared inside function not scopes (like for scope | if scope )
+
+
+        //function myfun() {
+        //    var test = 10;// when you declare variable using var inisde function : accsssible only inside fucntion scope 
+        //    console.log("Inside Function Test = " + test);//accessible ( cause inside function )
+        //}
+        //myfun();
+        //console.log('outside myfun fucntion test = ' + test);// error
+
+        //function myfun() {
+        //    test = 20;// you have to initialzie it : accessible outside function scope :  globle scoped defined ( after calling for function)
+        //    console.log("Inside Function MyFun : Test = " + test);
+        //}
+        //myfun();
+        //console.log("Outside Function MyFun : Test = " + test);
+
+
+        // we not have block scope 
+        //if (true) {
+        //    var test = 10;// test 
+        //}
+        //console.log(test);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

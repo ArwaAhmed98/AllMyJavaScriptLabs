@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // keyup : not cancelable 
+
+        var digitsnumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (v) { return "Digit" + v; })
+        window.addEventListener('load', function () {
+
+            // register keyp with input type text : cancel 
+            this.document.querySelector("input[type='text']").addEventListener('keydown', function (e) {
+
+                //console.log(e);
+                /*document.getElementsByTagName('span')[0].innerText = e.key;*/
+                // can we cancel keyup
+                // if user enter any diit from 1 to 9 we need to cancel event 
+                if (digitsnumbers.includes(e.code))
+                    e.preventDefault();
+            });//end of keyup
+        });//end of load
+    </script>
+</head>
+<body>
+    <input type="text"/><span></span>
+
+</body>
+</html>

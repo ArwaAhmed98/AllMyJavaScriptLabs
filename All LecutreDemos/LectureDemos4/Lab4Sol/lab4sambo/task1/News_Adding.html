@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: absolute;
+            border: 2px solid red;
+            padding: 20px;
+            left: 30%;
+            top: 20%;
+            width: 40%;
+            text-align: center;
+        }
+        
+        table {
+            width: 70%;
+            text-align: center;
+            margin: 10px auto;
+        }
+        
+        caption {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        td {
+            background-color: lightblue;
+            color: black;
+        }
+        
+        .sport {
+            background-color: lawngreen;
+        }
+        
+        .social {
+            background-color: lightblue;
+        }
+        
+        .politics {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="radio" id="type1" name="type" value="sport"> Sport
+        <input type="radio" id="type2" name="type" value="social"> Social
+        <input type="radio" id="type3" name="type" value="political"> Political
+        <br>
+        <input type="text" id="topic" name="value" placeholder="Enter News Here ">
+        <!-- this input type text is the revious element sibling for add button-->
+        <button id="add">Add</button>
+        <table id="Table">
+
+            <caption>News</caption>
+        </table>
+
+    </div>
+    <script>
+        var addBtn = document.getElementById("add");
+        var table = document.getElementById("Table");
+        var counter = 0;
+
+        function getSelectedCategory() {
+            var radio = document.querySelectorAll("input[type=radio]");
+            for (let i = 0; i < radio.length; i++) {
+                if (radio[i].checked)
+                    return radio[i].value;
+            }
+        }
+
+        addBtn.onclick = function(e) {
+            var topic = e.target.previousElementSibling.value;
+            var className = getSelectedCategory();
+            if (className && topic.trim()) {
+                e.target.previousElementSibling.value = "";
+                table.innerHTML += `<tr id="row${counter}">
+                                            <td class=${className}>
+                                            ${topic}
+                                            </td>
+                                            <td>
+                                            <button id="del" onclick="delete_row(${counter})">Rem</button>
+                                            </td>
+                                            </tr> `;
+
+            }
+            counter++;
+        }
+
+        function delete_row(no) {
+            document.getElementById("row" + no + "").outerHTML = "";
+        }
+    </script>
+</body>
+
+</html>
