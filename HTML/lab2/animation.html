@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="utf-8" />
+    <title>animation</title>
+    <style>
+        @keyframes sectionanimation {
+            0% {
+                top: 70px;
+                left: 70px;
+                background-color: brown;
+
+            }
+
+            25% {
+                top: 70px;
+                left: 300px;
+                background-color: aqua;
+
+            }
+
+            50% {
+                top: 300px;
+                left: 300px;
+                background-color: yellowgreen;
+            }
+
+            75% {
+                top: 300px;
+                left: 70px;
+                background-color: crimson;
+
+            }
+
+            90% {
+                top: 70px;
+                left: 70px;
+                background-color: black;
+            }
+        }
+
+        section {
+            width: 150px;
+            height: 150px;
+            top: 70px;
+            left: 70px;
+            position: absolute;
+
+        }
+        section:hover{
+            animation-play-state: paused;
+            transform: scale(1.1);
+        }
+        .s{
+            animation-name: sectionanimation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        div {
+            display: flex;
+            width: 500px;
+            height: 500px;
+            justify-content: space-around;
+        }
+
+        input {
+            width: 70px;
+            height: 50px;
+            color: black;
+            background-color: rgb(104, 158, 194);
+        }
+    </style>
+</header>
+
+<body>
+
+    <section id="d"></section>
+    <div>
+        <input type="button" value="start" onclick="start();">
+        <input type="button" value="stop"  onclick="stop();">
+
+    </div>
+    <script>
+        function start(){
+           var v= document.getElementById("d");
+           v.classList.add("s");
+        }
+        function stop(){
+           var v= document.getElementById("d");
+           v.classList.remove("s");
+        }
+
+    </script>
+</body>
+
+</html>
