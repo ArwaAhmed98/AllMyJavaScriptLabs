@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB90FxtYG_ybAYXGkz0ybkmkboE2nEbezI"></script>
+    <script>
+        window.addEventListener('load', () => {
+            mymap = document.getElementById('mymap');
+        });//end of load
+
+        function getlocationdata() {
+            //1- check avaiablity of gelocation in user browser (navigator)
+            if (navigator.geolocation) {
+
+                //2- get permission :  getCurrentPosition(success,error);
+                navigator.geolocation.getCurrentPosition(getGMaps, errorhandeler);
+
+            } else {
+                mymap.innerText = "Sorry , Please Update Ypur Browser And Try Agan !!!";
+            }
+        }
+
+
+        function showDetails() {
+            //1- check avaiablity of gelocation in user browser (navigator)
+            if (navigator.geolocation) {
+
+                //2- get permission :  getCurrentPosition(success,error);
+                navigator.geolocation.getCurrentPosition(printData, errorhandeler);
+
+            } else {
+                mymap.innerText = "Sorry , Please Update Ypur Browser And Try Agan !!!";
+            }
+        }
+        function printData(position){
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            acc = position.coords.accuracy;
+            document.getElementById("mymap").innerHTML = `<h1>your latatitude is ${lat}</h1> <br>` 
+            document.getElementById("mymap").innerHTML += `<h1>your long is ${lon}</h1>  <br>` 
+            document.getElementById("mymap").innerHTML += `<h1>your acc is ${acc}</h1>  <br>  ` 
+        }
+
+        function getGMaps(position) {
+            /*alert("Success");*/
+            /*console.log();*/
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            //latlon = lat + " , " + lon;
+            //mymap.innerText = latlon;
+
+
+            // steps to deal with google maps api
+            //1- create LatLng object from google using lat and lon (geolocation api)
+            let location = new google.maps.LatLng(lat, lon);
+
+            //2- center | zoom
+            let myspecs = { zoom: 16, center: location };
+            //3- display map inside mymap div
+            new google.maps.Map(mymap, myspecs);
+    //         new google.maps.Marker({
+    //     position: {lat:latitude,lng:longitude},
+    //     map,
+    //     title: "your location",
+    //   });
+
+        }
+        function errorhandeler() {
+            alert("Error");
+        }
+    </script>
+    <style>
+        #mymap {
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="Map" onclick="getlocationdata();"/>
+    <input type="button" value="info" onclick="showDetails();"/>
+    <div id="mymap">
+
+    </div>
+</body>
+</html>

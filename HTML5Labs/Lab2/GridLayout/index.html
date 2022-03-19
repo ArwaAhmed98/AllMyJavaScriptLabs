@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* overflow: hidden; */
+        }
+        #mainwrapper {
+           display: grid;
+           height: 100vh;
+            /* margin: 10px auto; */
+            padding: 5px;
+            grid-template-areas: "sidebar  header"
+                "sidebar  content";
+                /* "sidebar  footer"; */
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: 1fr  10fr ;
+            /* gap: 10px 10px; */
+        }
+
+        .box {
+            /* background-color: Highlight; */
+            /* border: 1px solid black; */
+        }
+
+        .header {
+         grid-area:header;
+        }
+    
+        .header ul{
+            background-color: #D9D4CE;
+            display: flex;
+            flex-direction: row;
+            justify-content:flex-start;
+            align-items: center;
+           
+        }
+        .header ul li{
+            list-style: none;
+            align-items: center;
+            padding: 1rem;
+            padding-left: 2rem;
+        }
+        /* .footer {
+            grid-area: footer;
+        } */
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+       
+        .content {
+            grid-area: content;
+            display: block;
+            margin-bottom: 1em;
+            /* background-color: rebeccapurple; */
+        }
+        .content img{
+            display: block;
+            float: left;
+            width: 17em;
+        }
+        .sidebarr_container{
+            margin: auto;
+            width: 90%;
+            /* align-items: centerz; */
+        }
+       .sidebarr_container ul{
+           display: flex;
+           flex-direction: column;
+           justify-content: space-around;
+           /* align-items: space-around; */
+           margin: 2em 0;
+       }
+       .sidebarr_container ul li{
+           list-style: none;
+           padding: 0.25em;
+       }
+       #logo{
+           width: 8em;
+       }
+       .small-grid{
+           margin: 1em 0;
+       }
+       .small-grid img{
+           width: 4em;
+           /* margin: 1em 0s; */
+       }
+       #widget{
+           padding: 1em 0;
+       }
+    </style>
+</head>
+<body>
+    <div id="mainwrapper">
+        <div class="box header"><ul>
+            <li>All</li>
+            <li>illustration</li>
+            <li>Motion</li>
+            <li>Photography</li>
+            <li>print</li>
+        </ul></div>
+        <!-- <div class="box footer">Footer</div> -->
+        <div class="box sidebar">
+            <div class="sidebarr_container">
+                    <img  id="logo" src="./images/logoCapture.JPG">
+                    <ul>
+                        <li>
+                            potrifolo
+                        </li>
+                        <li>
+                            About us
+                        </li>
+                        <li>
+                            blog
+                        </li>
+                        <li>
+                            buy this theme
+                        </li>
+                    </ul>
+                    <h3 id="widget">
+                      A Text widget
+                    </h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum delectus distinctio ipsa dolorum voluptas. Hic neque saepe, fugiat sint perferendis voluptatibus rerum iusto repudiandae natus numquam commodi atque nihil quam.</p>
+                    <h3>
+                        <div class="small-grid">
+                        <img src="./images/contentCapture.JPG">
+                        <img src="./images/contentCapture.JPG">
+                        <img src="./images/contentCapture.JPG">
+                        <img src="./images/contentCapture.JPG">
+                        <img src="./images/contentCapture.JPG">
+                        <img src="./images/contentCapture.JPG">
+                    </div>
+                    </h3>
+
+                </div> 
+        </div>
+        <div class="box content">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+            <img src="./images/contentCapture.JPG">
+
+
+        </div>
+    </div>
+</body>
+</html>

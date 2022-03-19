@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .all{
+            display: flex;
+            justify-content: center;
+        }
+        .first,.sec{
+            /* border: 1px solid black; */
+            margin: 2em;
+        
+        }
+
+    </style>
+    <script>
+        function ff(e) {
+            console.log(e.target.value);
+            /*document.body.style.backgroundColor = e.target.value;*/
+        }
+    </script>
+</head>
+<body>
+    <form method="get" action="#" oninput="result.value = parseInt(firstnumber.value) + parseInt(secondnumber.value)">
+        <!--<input type="number" min="1" max="10" step="1" value="5" /><br/>-->
+        <!--<input type="color" onchange="ff(event);"/>-->
+        <!--<input type="email"/>-->
+        <!--<input type="date" onchange="ff(event)" min="2022-02-26" max="2022-03-05"/>-->
+        <!--<input type="datetime-local"/>-->
+        <!--<input type="submit" value="SendData"/>-->
+        <!--<input type="text" list="mylist"/>
+    <datalist id="mylist">
+        <option>ITI Mansoura</option>
+        <option>ITI Smart</option>
+        <option>ITI Alex</option>
+        <option>University Mansoura</option>
+        <option>University Asswan</option>
+        <option>University Alex</option>
+    </datalist>-->
+    <div class="all">
+<div class="first">
+        <input type="number" value="5" min="1" max="10" step="1" name="firstnumber" />
+        +
+        <input type="number" value="5" min="1" max="10" step="1" name="secondnumber" />
+        =
+        <output name="result" for="firstnumber secondnumber" /> 
+
+
+
+        <br>
+       
+        <!--<input type="text" required placeholder="UserName"/><br/>
+       <input type="text" multiple/>-->
+        <!-- <input type="submit" value="SendData"/> -->
+    </form>
+</div>
+    <br>
+<div class="sec">
+    <form method="get" action="#" oninput="r1.value = parseInt(f.value) * parseInt(s.value)">
+
+    <input type="number" value="5" min="1" max="10" step="1" name="f" />
+    *
+    <input type="number" value="5" min="1" max="10" step="1" name="s" />
+    =
+    <output name="r1" for="f s" /> 
+    </form>
+</div>
+</div>
+</body>
+</html>
